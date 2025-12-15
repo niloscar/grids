@@ -5,4 +5,35 @@ body {
 }
 /*************************************************/
 
+body {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: repeat(12, header);
+}
 
+footer {
+	display: grid;
+	gap: 1rem;
+}
+
+body * {
+	border: 1px solid;
+}
+
+#box1 {
+	grid-area: main;
+}
+
+#box2 {
+	grid-area: main;
+}
+
+#box3 {
+	grid-area: main;
+}
+
+footer section {
+
+}
