@@ -5,7 +5,9 @@ body {
 }
 /*************************************************/
 
-body {
+div#page {
+	margin: 0 auto;
+	max-width: 90%;
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: repeat(12, 1fr);
@@ -18,6 +20,12 @@ body {
 ;
 }
 
+div#page * {
+	border: 1px solid;
+	height: 200px;
+	padding: .5rem;
+}
+
 footer {
 	display: grid;
 	gap: 1rem;
@@ -26,9 +34,7 @@ footer {
 	grid-template-rows: auto;
 }
 
-body * {
-	border: 1px solid;
-}
+
 
 #box1 {
 	grid-area: main1;
@@ -40,10 +46,6 @@ body * {
 
 #box3 {
 	grid-area: main3;
-}
-
-footer section {
-
 }
 
 #header-id{
