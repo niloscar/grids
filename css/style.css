@@ -16,12 +16,15 @@ div#page {
 		"main main main main main main main main main main main main"
 		"content content content content content content content content content sidebar sidebar sidebar"
 		"footer footer footer footer footer footer footer footer footer footer footer footer";
-}
 
-div#page * {
-	border: 1px solid;
-	padding: .5rem;
-	height: 200px;
+	& * {
+		border: 1px solid;
+		padding: .5rem;
+	}
+	
+	& > * {
+		height: 200px;
+	}
 }
 
 footer {
