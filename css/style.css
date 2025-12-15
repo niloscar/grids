@@ -5,17 +5,23 @@ body {
 }
 /*************************************************/
 
-body {
+
+div#page {
+	max-width: 90%;
+	margin: 0 auto;
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: auto;
 	grid-template-areas: 
 		"header header header header header header header header header header header header"
-		"main1 main1 main2 main2 main2 main2 main2 main2 main2 main2 main3 main3"
+		"main main main main main main main main main main main main"
 		"content content content content content content content content content sidebar sidebar sidebar"
-		"footer footer footer footer footer footer footer footer footer footer footer footer"
-;
+		"footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+div#page * {
+	border: 1px solid;
+	padding: .5rem;
+	height: 200px;
 }
 
 footer {
@@ -26,24 +32,19 @@ footer {
 	grid-template-rows: auto;
 }
 
-body * {
-	border: 1px solid;
-}
-
 #box1 {
-	grid-area: main1;
+	grid-area: main;
+	grid-column: 1 / span 2; /* Förkortning för grid-column-start: 1; grid-column-end: span 2; */
 }
 
 #box2 {
-	grid-area: main2;
+	grid-area: main;
+	grid-column: 3 / span 8; /* Förkortning för grid-column-start: 3; grid-column-end: span 8; */
 }
 
 #box3 {
-	grid-area: main3;
-}
-
-footer section {
-
+	grid-area: main;
+	grid-column: 11 / span 2; /* Förkortning för grid-column-start: 11; grid-column-end: span 2; */
 }
 
 #header-id{
