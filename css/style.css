@@ -8,14 +8,22 @@ body {
 body {
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: auto;
-	grid-template-areas: repeat(12, header);
+	grid-template-areas: 
+		"header header header header header header header header header header header header"
+		"main1 main1 main2 main2 main2 main2 main2 main2 main2 main2 main3 main3"
+		"content content content content content content content content content sidebar sidebar sidebar"
+		"footer footer footer footer footer footer footer footer footer footer footer footer"
+;
 }
 
 footer {
 	display: grid;
 	gap: 1rem;
+	grid-area: footer;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
 }
 
 body * {
@@ -23,17 +31,29 @@ body * {
 }
 
 #box1 {
-	grid-area: main;
+	grid-area: main1;
 }
 
 #box2 {
-	grid-area: main;
+	grid-area: main2;
 }
 
 #box3 {
-	grid-area: main;
+	grid-area: main3;
 }
 
 footer section {
 
+}
+
+#header-id{
+	grid-area: header;
+}
+
+#content{
+	grid-area: content;
+}
+
+#sidebar{
+	grid-area: sidebar;
 }
