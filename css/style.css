@@ -5,12 +5,18 @@ body {
 }
 /*************************************************/
 
+ * {
+	margin: 0;
+	padding: 0;
+} 
 
 div#page {
 	max-width: 90%;
 	margin: 0 auto;
 	display: grid;
-	gap: 1rem;
+	gap: 2%;
+	box-sizing: border-box;
+	/* min-height: 100svh; */
 	grid-template-areas: 
 		"header header header header header header header header header header header header"
 		"main main main main main main main main main main main main"
@@ -29,10 +35,12 @@ div#page {
 
 footer {
 	display: grid;
-	gap: 1rem;
+	gap: 2%;
 	grid-area: footer;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto;
+	box-sizing: border-box;
+	/* overflow: auto; */
 }
 
 #box1 {
@@ -60,4 +68,80 @@ footer {
 
 #sidebar{
 	grid-area: sidebar;
+}
+
+/* breda datorskärmar */
+@media screen and (min-width: 1201px) {
+	
+}
+
+/* mindre datorskrämarm */
+@media screen and (max-width: 1200px) {
+	div#page { 
+		grid-template-areas: 
+		"header header header header header header header header header header header header"
+		"main main main main main main main main main main main main"
+		"content content content content content content content content sidebar sidebar sidebar sidebar"
+		"footer footer footer footer footer footer footer footer footer footer footer footer"; 
+	}
+
+	#box1 {
+		grid-area: main;
+		grid-column: 1 / span 3; /* Förkortning för grid-column-start: 1; grid-column-end: span 2; */
+	}
+
+	#box2 {
+		grid-area: main;
+		grid-column: 4 / span 6; /* Förkortning för grid-column-start: 3; grid-column-end: span 8; */
+	}
+
+	#box3 {
+		grid-area: main;
+		grid-column: 10 / span 3; /* Förkortning för grid-column-start: 11; grid-column-end: span 2; */
+	}
+}
+
+/* tablets */
+@media screen and (max-width: 960px) {
+
+	div#page { 
+		grid-template-areas: 
+		"header header header header header header header header header header header header"
+		"main main main main main main main main main main main main"
+		"content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar"
+		"footer footer footer footer footer footer footer footer footer footer footer footer";
+	}
+
+	#box1 {
+		grid-area: main;
+		grid-column: 1 / span 4; /* Förkortning för grid-column-start: 1; grid-column-end: span 2; */
+	}
+
+	#box2 {
+		grid-area: main;
+		grid-column: 5 / span 4; /* Förkortning för grid-column-start: 3; grid-column-end: span 8; */
+	}
+
+	#box3 {
+		grid-area: main;
+		grid-column: 9 / span 4; /* Förkortning för grid-column-start: 11; grid-column-end: span 2; */
+	}
+
+	div#page > footer {
+		grid-template-columns: repeat(2, 1fr);
+		height: auto;
+		/* padding-bottom: 16px; */
+		/* gap: 2svh; */
+	}
+	
+	footer section {
+		/* background-color: aqua; */
+		height: 200px;
+	}
+	
+}
+
+/* telefon */
+@media screen and (max-width: 768px) {
+	
 }
