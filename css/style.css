@@ -11,10 +11,12 @@ body {
 } 
 
 div#page {
-	max-width: 90%;
+	max-width: 88%;
 	margin: 0 auto;
+	padding-top: 10px;
 	display: grid;
-	gap: 2%;
+	column-gap: 2%;
+	row-gap: 20px;
 	box-sizing: border-box;
 	/* min-height: 100svh; */
 	grid-template-areas: 
@@ -22,6 +24,8 @@ div#page {
 		"main main main main main main main main main main main main"
 		"content content content content content content content content content sidebar sidebar sidebar"
 		"footer footer footer footer footer footer footer footer footer footer footer footer";
+	/* grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: 1 auto; */
 
 	& * {
 		border: 1px solid;
@@ -35,13 +39,16 @@ div#page {
 
 footer {
 	display: grid;
-	gap: 2%;
+	column-gap: 2%;
+	row-gap: 10px;
 	grid-area: footer;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto;
 	box-sizing: border-box;
 	/* overflow: auto; */
 }
+
+
 
 #box1 {
 	grid-area: main;
