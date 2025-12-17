@@ -18,16 +18,14 @@ div#page {
 	column-gap: 2%;
 	row-gap: 20px;
 	box-sizing: border-box;
-	/* min-height: 100svh; */
 	grid-template-areas: 
 		"header header header header header header header header header header header header"
 		"main main main main main main main main main main main main"
 		"content content content content content content content content content sidebar sidebar sidebar"
 		"footer footer footer footer footer footer footer footer footer footer footer footer";
-	/* grid-template-rows: repeat(4, 1fr);
-	grid-template-columns: 1 auto; */
 
 	& * {
+		
 		border: 1px solid;
 		padding: .5rem;
 	}
@@ -47,8 +45,6 @@ footer {
 	box-sizing: border-box;
 	/* overflow: auto; */
 }
-
-
 
 #box1 {
 	grid-area: main;
@@ -150,5 +146,37 @@ footer {
 
 /* telefon */
 @media screen and (max-width: 768px) {
-	
+	div#page {
+		grid-template-areas:
+				"header" 
+				"main1"
+				"main2" 
+				"main3" 
+				"content"  
+				"sidebar" 
+				"footer";
+
+		row-gap: 20px; 
+		}
+
+	div#page>footer {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	#box1 {
+		grid-area: main1;
+		grid-column: 1 / span 1;
+	}
+
+	#box2 {
+		grid-area: main2;
+		grid-column: 1 / span 1;
+	}
+
+	#box3 {
+		grid-area: main3;
+		grid-column: 1 / span 1;
+	}
+
+
 }
